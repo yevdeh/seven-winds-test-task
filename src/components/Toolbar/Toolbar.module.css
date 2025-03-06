@@ -1,0 +1,20 @@
+.Tabs {
+  display: flex;
+  gap: 24px;
+  margin-left: 8px;
+}
+.Tab {
+  padding: 10px 3px;
+}
+.Tab[data-is-active='true'] {
+  border-bottom: 2px solid #fff;
+}
+.Tab:not([data-is-active='true']) {
+  color: #a1a1aa;
+}
+.Toolbar {
+  border-bottom: 1px solid #414144;
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+}
