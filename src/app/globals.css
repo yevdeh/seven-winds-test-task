@@ -371,6 +371,10 @@ button {
   transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
+button:focus {
+  outline: none;
+}
+
 img {
   max-width: 100%;
 }

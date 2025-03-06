@@ -1,3 +1,4 @@
+"use client";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 import { Table } from "@/components/Table/Table";
 import { Toolbar } from "@/components/Toolbar/Toolbar";

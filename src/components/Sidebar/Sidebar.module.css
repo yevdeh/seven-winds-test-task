@@ -1,3 +1,48 @@
+.ProjectsWrapper {
+  overflow: hidden;
+}
+.Projects {
+  margin: 0;
+  padding: 0;
+  transition: transform 0.3s;
+}
+.Projects[data-is-opened="false"] {
+  transform: translateY(-100%);
+}
+.Project {
+  background: url(/icons/icon-masonry.svg) no-repeat 20px / 22px;
+  color: #fff;
+  line-height: 1.57;
+  padding: 5px 20px;
+  text-align: left;
+  text-indent: 36px;
+  width: 100%;
+}
+.Project[data-is-active="true"] {
+  background-color: #a1a1aa;
+}
+.ToggleButton {
+  align-items: center;
+  border-bottom: 1px solid #414144;
+  color: #a1a1aa;
+  display: flex;
+  justify-content: space-between;
+  line-height: 100%;
+  padding: 8px 6px 8px 20px;
+  text-align: left;
+  width: 100%;
+}
+.ToggleButtonIcon {
+  transition: transform 0.3s;
+}
+.ToggleButtonIcon[data-is-opened="false"] {
+  transform: rotate(180deg);
+}
+.ToggleButtonSubtitle {
+  display: block;
+  font-size: 10px;
+}
 .Sidebar {
+  border-right: 1px solid #414144;
   width: 234px;
 }
