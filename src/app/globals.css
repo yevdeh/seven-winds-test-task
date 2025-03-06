@@ -345,6 +345,7 @@
  }
 
  html {
+   height: 100%;
    scroll-behavior: smooth;
  }
 
@@ -353,6 +354,7 @@
    color: #fff;
    font-family: "Roboto", sans-serif;
    font-size: 14px;
+   height: 100%;
    min-width: 320px;
  }
 

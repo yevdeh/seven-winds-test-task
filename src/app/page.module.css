@@ -1,0 +1,7 @@
+.Main {
+  height: 100%;
+}
+.SidebarAndTable {
+  display: flex;
+  height: calc(100vh - 44px);
+}
