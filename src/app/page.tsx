@@ -1,7 +1,7 @@
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 import { Table } from "@/components/Table/Table";
 import { Toolbar } from "@/components/Toolbar/Toolbar";
-import S from './page.module.css'
+import S from "./page.module.css";
 
 const Home = () => (
   <main className={S.Main}>
