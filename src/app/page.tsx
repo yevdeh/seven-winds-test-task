@@ -7,9 +7,14 @@ import S from "./page.module.css";
 const Home = () => (
   <main className={S.Main}>
     <Toolbar />
-    <div className={S.SidebarAndTable}>
+    <div className={S.SidebarAndTitleAndTable}>
       <Sidebar />
-      <Table />
+      <div className={S.TitleAndTable}>
+        <div className={S.TitleWrapper}>
+          <h1 className={S.Title}>Строительно-монтажные работы</h1>
+        </div>
+        <Table />
+      </div>
     </div>
   </main>
 );

@@ -1,7 +1,24 @@
 .Main {
   height: 100%;
 }
-.SidebarAndTable {
+.SidebarAndTitleAndTable {
   display: flex;
   height: calc(100vh - 44px);
+}
+.TitleAndTable {
+  flex-grow: 1;
+}
+.TitleWrapper {
+  border-bottom: 1px solid #414144;
+  display: flex;
+  height: 45px;
+}
+.Title {
+  align-items: center;
+  border-right: 1px solid #414144;
+  display: flex;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0 15px;
 }
