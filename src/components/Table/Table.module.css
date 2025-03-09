@@ -1,2 +1,55 @@
+.IconWrapper {
+  position: relative;
+}
+.IconWrapper::before {
+  border-bottom: 1px solid #c6c6c6;
+  border-left: 1px solid #c6c6c6;
+  bottom: 12px;
+  content: "";
+  height: 65px;
+  left: -9px;
+  position: absolute;
+  width: 13px;
+}
+.IconWrapper[data-level="1"] {
+  z-index: 2;
+}
+.IconWrapper[data-level="1"]::before {
+  display: none;
+}
+.IconWrapper[data-level="2"] {
+  margin-left: 20px;
+  z-index: 1;
+}
+.IconWrapper[data-level="3"] {
+  margin-left: 40px;
+}
+.TableWrapper {
+  padding: 0 10px;
+}
 .Table {
+  width: 100%;
+}
+.Table th {
+  color: #a1a1aa;
+  font-weight: 400;
+  padding: 10px 12px;
+}
+.Table th:nth-child(1) {
+  width: 110px;
+}
+.Table th:nth-child(3),
+.Table th:nth-child(4),
+.Table th:nth-child(5),
+.Table th:nth-child(6) {
+  width: 200px;
+}
+.Table tbody tr {
+  border-top: 1px solid #414144;
+}
+.Table td {
+  padding: 19px 12px;
+}
+.Table tr td:first-child {
+  padding: 17px 12px;
 }
