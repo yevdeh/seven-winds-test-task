@@ -21,6 +21,7 @@ export const Table = () => {
               <td>
                 <div className={S.IconWrapper} data-level={row.level}>
                   <img src="/icons/icon-file.svg" alt="" />
+                  <img src="/icons/icon-trash.svg" alt="" />
                 </div>
               </td>
               <td>{row.rowName}</td>

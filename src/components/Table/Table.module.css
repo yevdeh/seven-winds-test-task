@@ -1,25 +1,23 @@
 .IconWrapper {
-  position: relative;
+  border-radius: 6px;
+  display: inline-flex;
+  gap: 6px;
+  padding: 2px 7px 2px 2px;
 }
-.IconWrapper::before {
-  border-bottom: 1px solid #c6c6c6;
-  border-left: 1px solid #c6c6c6;
-  bottom: 12px;
-  content: "";
-  height: 65px;
-  left: -9px;
-  position: absolute;
-  width: 13px;
+.IconWrapper img {
+  cursor: pointer;
 }
-.IconWrapper[data-level="1"] {
-  z-index: 2;
-}
-.IconWrapper[data-level="1"]::before {
+.IconWrapper img:last-child {
   display: none;
+}
+.IconWrapper:hover {
+  background: #414144;
+}
+.IconWrapper:hover img:last-child {
+  display: block;
 }
 .IconWrapper[data-level="2"] {
   margin-left: 20px;
-  z-index: 1;
 }
 .IconWrapper[data-level="3"] {
   margin-left: 40px;
@@ -51,5 +49,5 @@
   padding: 19px 12px;
 }
 .Table tr td:first-child {
-  padding: 17px 12px;
+  padding: 16px 0 11px 9px;
 }
