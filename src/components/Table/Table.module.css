@@ -22,6 +22,19 @@
 .IconWrapper[data-level="3"] {
   margin-left: 40px;
 }
+.Input {
+  background: none;
+  border: 1px solid #414144;
+  border-radius: 6px;
+  color: #71717a;
+  padding: 10px;
+  width: 100%;
+}
+.Input:disabled {
+  border-color: transparent;
+  color: #fff;
+  padding-left: 0;
+}
 .TableWrapper {
   padding: 0 10px;
 }
@@ -46,7 +59,7 @@
   border-top: 1px solid #414144;
 }
 .Table td {
-  padding: 19px 12px;
+  padding: 8px 12px;
 }
 .Table tr td:first-child {
   padding: 16px 0 11px 9px;

@@ -24,11 +24,21 @@ export const Table = () => {
                   <img src="/icons/icon-trash.svg" alt="" />
                 </div>
               </td>
-              <td>{row.rowName}</td>
-              <td>{row.salary}</td>
-              <td>{row.equipmentCosts}</td>
-              <td>{row.overheads}</td>
-              <td>{row.estimatedProfit}</td>
+              <td>
+                <input className={S.Input} disabled name="rowName" value={row.rowName} />
+              </td>
+              <td>
+                <input className={S.Input} disabled name="salary" value={row.salary} />
+              </td>
+              <td>
+                <input className={S.Input} disabled name="equipmentCosts" value={row.equipmentCosts} />
+              </td>
+              <td>
+                <input className={S.Input} disabled name="overheads" value={row.overheads} />
+              </td>
+              <td>
+                <input className={S.Input} disabled name="estimatedProfit" value={row.estimatedProfit} />
+              </td>
             </tr>
           ))}
         </tbody>
