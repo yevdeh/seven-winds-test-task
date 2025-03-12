@@ -24,16 +24,15 @@
 }
 .Input {
   background: none;
-  border: 1px solid #414144;
-  border-radius: 6px;
-  color: #71717a;
-  padding: 10px;
+  border: 1px solid transparent;
+  padding: 10px 10px 10px 0;
   width: 100%;
 }
-.Input:disabled {
-  border-color: transparent;
-  color: #fff;
-  padding-left: 0;
+.Input[contenteditable="plaintext-only"] {
+  border-color: #414144;
+  border-radius: 6px;
+  color: #71717a;
+  padding-left: 10px;
 }
 .TableWrapper {
   padding: 0 10px;
