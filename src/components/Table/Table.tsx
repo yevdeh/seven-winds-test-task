@@ -1,8 +1,11 @@
-import { useEffect } from "react";
-import { data } from "./Table.data";
+import { useEffect, useReducer } from "react";
+import { FetchService } from "@/helpers/services/FetchService";
 import S from "./Table.module.css";
+import { reducer } from "./Table.reducer";
 
 export const Table = () => {
+  const [state, dispatch] = useReducer(reducer, []);
+
   useEffect(() => {
     const handleClickOutsideInput = (e: MouseEvent) => {
       if ((e.target as HTMLElement).hasAttribute("data-input")) return;
@@ -17,6 +20,13 @@ export const Table = () => {
     return () => {
       document.removeEventListener("click", handleClickOutsideInput);
     };
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      const data = await FetchService.getList();
+      dispatch({ type: "init", payload: data });
+    })();
   }, []);
 
   const handleInputDoubleClick = (e: React.MouseEvent) => {
@@ -41,41 +51,105 @@ export const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((row) => (
-            <tr key={row.rowName}>
+          {state.length ? (
+            state.map((row) => (
+              <tr key={row.rowName}>
+                <td>
+                  <div className={S.IconWrapper} data-level={row.level}>
+                    <img src="/icons/icon-file.svg" alt="" />
+                    <img src="/icons/icon-trash.svg" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="rowName">
+                    {row.rowName}
+                  </div>
+                </td>
+                <td>
+                  <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="salary">
+                    {row.salary}
+                  </div>
+                </td>
+                <td>
+                  <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="equipmentCosts">
+                    {row.equipmentCosts}
+                  </div>
+                </td>
+                <td>
+                  <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="overheads">
+                    {row.overheads}
+                  </div>
+                </td>
+                <td>
+                  <div
+                    className={S.Input}
+                    onDoubleClick={handleInputDoubleClick}
+                    data-input
+                    data-name="estimatedProfit"
+                  >
+                    {row.estimatedProfit}
+                  </div>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr data-is-edited="true">
+              <td></td>
               <td>
-                <div className={S.IconWrapper} data-level={row.level}>
-                  <img src="/icons/icon-file.svg" alt="" />
-                  <img src="/icons/icon-trash.svg" alt="" />
+                <div
+                  className={S.Input}
+                  contentEditable="plaintext-only"
+                  onDoubleClick={handleInputDoubleClick}
+                  data-input
+                  data-name="rowName"
+                ></div>
+              </td>
+              <td>
+                <div
+                  className={S.Input}
+                  contentEditable="plaintext-only"
+                  onDoubleClick={handleInputDoubleClick}
+                  data-input
+                  data-name="salary"
+                >
+                  0
                 </div>
               </td>
               <td>
-                <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="rowName">
-                  {row.rowName}
+                <div
+                  className={S.Input}
+                  contentEditable="plaintext-only"
+                  onDoubleClick={handleInputDoubleClick}
+                  data-input
+                  data-name="equipmentCosts"
+                >
+                  0
                 </div>
               </td>
               <td>
-                <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="salary">
-                  {row.salary}
+                <div
+                  className={S.Input}
+                  contentEditable="plaintext-only"
+                  onDoubleClick={handleInputDoubleClick}
+                  data-input
+                  data-name="overheads"
+                >
+                  0
                 </div>
               </td>
               <td>
-                <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="equipmentCosts">
-                  {row.equipmentCosts}
-                </div>
-              </td>
-              <td>
-                <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="overheads">
-                  {row.overheads}
-                </div>
-              </td>
-              <td>
-                <div className={S.Input} onDoubleClick={handleInputDoubleClick} data-input data-name="estimatedProfit">
-                  {row.estimatedProfit}
+                <div
+                  className={S.Input}
+                  contentEditable="plaintext-only"
+                  onDoubleClick={handleInputDoubleClick}
+                  data-input
+                  data-name="estimatedProfit"
+                >
+                  0
                 </div>
               </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>
